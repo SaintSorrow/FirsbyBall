@@ -24,8 +24,9 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackLayout Orientation="Horizontal" Grid.Row="1">
-            <Button Text="Player Info" Clicked="DisplayPlayerInfo" HorizontalOptions="FillAndExpand"/>
-            <Button Text="Choose Opponent" Clicked="ChooseOpponent" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Player Info" Clicked="DisplayPlayerInfo" HorizontalOptions="FillAndExpand" Grid.Row="0"/>
+            <Button Text="Choose Opponent" Clicked="ChooseOpponent" HorizontalOptions="FillAndExpand" Grid.Row="0"/>
+            <Button Text="Match History" Clicked="MatchHistory" HorizontalOptions="FillAndExpand" Grid.Row="1" />
         </StackLayout>
     </Grid>
 </ContentPage>

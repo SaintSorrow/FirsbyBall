@@ -18,7 +18,9 @@ namespace FrisbyBall.Views
         private User selectedUser;
         private List<User> userList;
         private List<User> opponentList = new List<User>();
+        private List<Match> matchList = new List<Match>();
         private UserManager manager;
+        private MatchManager matchManager;
 
         public OpponentListViewPage()
         {
@@ -33,6 +35,8 @@ namespace FrisbyBall.Views
             {
                 manager = UserManager.DefaultManager;
                 userList = await manager.GetUsersAsync();
+                matchManager = MatchManager.DefaultManager;
+                matchList = await matchManager.GetMatchListAsync();
 
                 foreach (User user in userList)
                 {
@@ -93,6 +97,29 @@ namespace FrisbyBall.Views
                 }
             }
             catch(Exception exc)
+            {
+                await DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
+            }
+        }
+
+        async void MatchHistory(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selectedUser == null)
+                {
+                    await DisplayAlert(Labels.Failed, Labels.OpNotSelect, Labels.Ok);
+                }
+                else
+                {
+                    var userMatches = matchList.Where(_match => _match.PlayerLost == selectedUser.UserName ||
+                                                            _match.PlayerWon == selectedUser.UserName).ToList();
+          
+                    Constants.userMatches = userMatches;
+                    await Navigation.PushModalAsync(new StatisticsPage(), false);
+                }
+            }
+            catch (Exception exc)
             {
                 await DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
             }

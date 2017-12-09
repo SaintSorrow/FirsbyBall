@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrisbyBall.Views.StatisticsPage"
+             BackgroundImage="background.jpg"
+             Title="Statistics">
+
+    <StackLayout>
+        <ListView x:Name="MyListView"
+            CachingStrategy="RecycleElement"
+            RowHeight="100">
+
+            <!--Built in Cells-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame OutlineColor="Silver" Padding="2">
+                            <Grid>
+                                <Label Text="Won:" 
+                                       Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       TextColor="Cyan" 
+                                       HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="Points:" 
+                                       Grid.Row="0" 
+                                       Grid.Column="2" 
+                                       TextColor="Cyan"
+                                       HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding PlayerWon}" 
+                                       Grid.Row="0" 
+                                       Grid.Column="1" 
+                                       TextColor="Cyan"
+                                       HorizontalOptions="CenterAndExpand"/>
+                                <Label Text ="{Binding WinPoints}" 
+                                       Grid.Row="0" 
+                                       Grid.Column="3" 
+                                       TextColor="Cyan"
+                                       HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="Lost:" 
+                                       Grid.Row="1" 
+                                       Grid.Column="0" 
+                                       TextColor="Cyan"
+                                       HorizontalOptions="CenterAndExpand"/>
+                                <Label Text ="Points:" 
+                                       Grid.Row="1" 
+                                       Grid.Column="2" 
+                                       TextColor="Cyan"
+                                       HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding PlayerLost}" 
+                                       Grid.Row="1" 
+                                       Grid.Column="1" 
+                                       TextColor="Cyan"
+                                       HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding LostPoints}" 
+                                       Grid.Row="1" 
+                                       Grid.Column="3" 
+                                       TextColor="Cyan"
+                                       HorizontalOptions="CenterAndExpand"/>
+                            </Grid>
+                        </Frame>    
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <!--Custom View Cells-->
+            <!--
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout>
+            <Label Text="{Binding Text}" 
+                   Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="{Binding Detail}" 
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    -->
+        </ListView>
+    </StackLayout>
+</ContentPage>

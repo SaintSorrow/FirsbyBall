@@ -17,6 +17,8 @@ namespace FrisbyBall
 
         public static User opponent;
         public static User LocalUser;
+        //public static User selectedUser;
+        public static List<Match> userMatches;
         public static int GoalLimit = 10;
 	}
 }
