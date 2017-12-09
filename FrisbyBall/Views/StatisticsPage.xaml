@@ -8,54 +8,62 @@
     <StackLayout>
         <ListView x:Name="MyListView"
             CachingStrategy="RecycleElement"
-            RowHeight="100">
+            RowHeight="80">
 
             <!--Built in Cells-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame OutlineColor="Silver" Padding="2">
+                        <Frame OutlineColor="Silver" Padding="5">
                             <Grid>
                                 <Label Text="Won:" 
                                        Grid.Row="0" 
                                        Grid.Column="0" 
                                        TextColor="Cyan" 
-                                       HorizontalOptions="CenterAndExpand"/>
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
                                 <Label Text="Points:" 
                                        Grid.Row="0" 
                                        Grid.Column="2" 
                                        TextColor="Cyan"
-                                       HorizontalOptions="CenterAndExpand"/>
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
                                 <Label Text="{Binding PlayerWon}" 
                                        Grid.Row="0" 
                                        Grid.Column="1" 
                                        TextColor="Cyan"
-                                       HorizontalOptions="CenterAndExpand"/>
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
                                 <Label Text ="{Binding WinPoints}" 
                                        Grid.Row="0" 
                                        Grid.Column="3" 
                                        TextColor="Cyan"
-                                       HorizontalOptions="CenterAndExpand"/>
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
                                 <Label Text="Lost:" 
                                        Grid.Row="1" 
                                        Grid.Column="0" 
                                        TextColor="Cyan"
-                                       HorizontalOptions="CenterAndExpand"/>
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
                                 <Label Text ="Points:" 
                                        Grid.Row="1" 
                                        Grid.Column="2" 
                                        TextColor="Cyan"
-                                       HorizontalOptions="CenterAndExpand"/>
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
                                 <Label Text="{Binding PlayerLost}" 
                                        Grid.Row="1" 
                                        Grid.Column="1" 
                                        TextColor="Cyan"
-                                       HorizontalOptions="CenterAndExpand"/>
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
                                 <Label Text="{Binding LostPoints}" 
                                        Grid.Row="1" 
                                        Grid.Column="3" 
                                        TextColor="Cyan"
-                                       HorizontalOptions="CenterAndExpand"/>
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
                             </Grid>
                         </Frame>    
                     </ViewCell>
