@@ -67,7 +67,9 @@ namespace FrisbyBall.Views
                         Loses = 0
                     };
 
-                    if(await checkIfExistsAsync(Constants.userList, user))
+                    List<User> userList = await manager.GetUsersAsync();
+
+                    if(await CheckIfExistsAsync(Constants.userList, user))
                     {
                         await manager.SaveUserAsync(user);
                         await DisplayAlert(Labels.Info, Labels.RegSucc, Labels.Ok);
@@ -114,7 +116,7 @@ namespace FrisbyBall.Views
                 return false;
             }
         }
-
+        
         /// <summary>
         /// checks if user already exists in system
         /// </summary>
