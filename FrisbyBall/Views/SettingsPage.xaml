@@ -46,8 +46,9 @@
                    HorizontalOptions="CenterAndExpand"/>
             <Entry x:Name="Entry_NewEmail"
                    Placeholder="Email"
+                   HorizontalTextAlignment="Center"
                    TextColor="White"
-                   HorizontalOptions="CenterAndExpand"/>
+                   HorizontalOptions="FillAndExpand"/>
             <Button x:Name="Btn_ChangeEmail" 
                     Text="Change Email"
                     TextColor="White"

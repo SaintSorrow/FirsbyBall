@@ -125,6 +125,15 @@ namespace FrisbyBall.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Player icon has been changed.
+        /// </summary>
+        internal static string IconChanged {
+            get {
+                return ResourceManager.GetString("IconChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Current password is incorrect, please repeat.
         /// </summary>
         internal static string IncorrectPass {

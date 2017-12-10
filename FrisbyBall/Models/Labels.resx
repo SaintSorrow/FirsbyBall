@@ -204,6 +204,9 @@
   <data name="EmailChanged" xml:space="preserve">
     <value>Email address has been changed</value>
   </data>
+  <data name="IconChanged" xml:space="preserve">
+    <value>Player icon has been changed</value>
+  </data>
   <data name="IncorrectPass" xml:space="preserve">
     <value>Current password is incorrect, please repeat</value>
   </data>

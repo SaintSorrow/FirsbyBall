@@ -110,6 +110,11 @@ namespace FrisbyBall.Views
             }
         }
 
+        /// <summary>
+        /// Event handler when change email button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ChangeEmailEvent(object sender, EventArgs e)
         {
             try
@@ -134,11 +139,18 @@ namespace FrisbyBall.Views
         /// </summary>
         async void ChangeEmail()
         {
-            Constants.LocalUser.Email = Entry_NewEmail.Text;
-            await userManager.SaveUserAsync(Constants.LocalUser);
-            Constants.userList = await userManager.GetUsersAsync();
-            Entry_NewEmail.Text = "";
-            DisplayAlert(Labels.Info, Labels.EmailChanged, Labels.Ok);
+            try
+            {
+                Constants.LocalUser.Email = Entry_NewEmail.Text;
+                userManager.SaveUserAsync(Constants.LocalUser);
+                Constants.userList = await userManager.GetUsersAsync();
+                Entry_NewEmail.Text = "";
+                DisplayAlert(Labels.Info, Labels.EmailChanged, Labels.Ok);
+            }
+            catch (Exception exc)
+            {
+                DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
+            }
         }
 
         /// <summary>
@@ -183,15 +195,18 @@ namespace FrisbyBall.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void ChooseIconEvent(object sender, EventArgs e)
+        async void ChooseIconEvent(object sender, EventArgs e)
         {
             try
             {
-
+                Constants.LocalUser.Image = selectedImage.Image;
+                selectedImage = null;
+                await userManager.SaveUserAsync(Constants.LocalUser);
+                DisplayAlert(Labels.Info, Labels.IconChanged, Labels.Ok);
             }
             catch (Exception exc)
             {
-
+                DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
             }
         }
     }
