@@ -94,7 +94,7 @@ namespace FrisbyBall.Views
             }
         }
 
-        private async void HomeGoalProcedure()
+        private void HomeGoalProcedure()
         {
             try
             {
@@ -103,17 +103,17 @@ namespace FrisbyBall.Views
                 if (homeGoalCount >= Constants.GoalLimit)
                 {
                     MatchPlayedEvent(Constants.LocalUser, Constants.opponent);
-                    await DisplayAlert(Labels.Win, Labels.Player + Constants.LocalUser.UserName + Labels.WonGame, Labels.Ok);
-                    await Navigation.PopModalAsync(false);
+                    DisplayAlert(Labels.Win, Labels.Player + Constants.LocalUser.UserName + Labels.WonGame, Labels.Ok);
+                    Navigation.PopModalAsync(false);
                 }
             }
             catch (Exception exc)
             {
-                await DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
+                DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
             }
         }
 
-        private async void AwayGoalProcedure()
+        private void AwayGoalProcedure()
         {
             try
             {
@@ -123,13 +123,13 @@ namespace FrisbyBall.Views
                 if (awayGoalCount >= Constants.GoalLimit)
                 {
                     MatchPlayedEvent(Constants.opponent, Constants.LocalUser);
-                    await DisplayAlert(Labels.Win, Labels.Player + Constants.opponent.UserName + Labels.WonGame, Labels.Ok);
-                    await Navigation.PopModalAsync(false);
+                    DisplayAlert(Labels.Win, Labels.Player + Constants.opponent.UserName + Labels.WonGame, Labels.Ok);
+                    Navigation.PopModalAsync(false);
                 }
             }
             catch (Exception exc)
             {
-                await DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
+                DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
             }
         }
     }

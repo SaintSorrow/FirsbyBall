@@ -40,6 +40,7 @@ namespace FrisbyBall.Views
         {
             try
             {
+                userList = await manager.GetUsersAsync();
                 User user = new User
                 {
                     UserName = Entry_Username.Text,
