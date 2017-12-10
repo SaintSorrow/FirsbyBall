@@ -5,6 +5,9 @@ using Xamarin.Forms;
 
 namespace FrisbyBall
 {
+    /// <summary>
+    /// class for static variables which are used in application
+    /// </summary>
 	public static class Constants
 	{
 		// Replace strings with your Azure Mobile App endpoint.
@@ -21,6 +24,7 @@ namespace FrisbyBall
         public static List<Match> userMatches;
         public static int GoalLimit = 10;
         public static List<User> userList;
+        public static List<User> opponentList;
 	}
 }
 

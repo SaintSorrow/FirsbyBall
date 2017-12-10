@@ -8,6 +8,9 @@ using FrisbyBall.Models;
 
 namespace FrisbyBall.Managers
 {
+    /// <summary>
+    /// Manager for matches, uses azure mobile apps, easy tables
+    /// </summary>
     public partial class MatchManager
     {
         static MatchManager defaultInstance = new MatchManager();
@@ -21,6 +24,9 @@ namespace FrisbyBall.Managers
             this.matchTable = client.GetTable<Models.Match>();
         }
 
+        /// <summary>
+        /// return default isntance of the mananger
+        /// </summary>
         public static MatchManager DefaultManager
         {
             get
@@ -33,11 +39,20 @@ namespace FrisbyBall.Managers
             }
         }
 
+        /// <summary>
+        /// return current client
+        /// </summary>
         public MobileServiceClient CurrentClient
         {
             get { return client; }
         }
 
+        /// <summary>
+        /// Gets match list from azure tables in the cloud
+        /// </summary>
+        /// <returns>
+        /// return a list of matches from azure
+        /// </returns>
         public async Task<List<Models.Match>> GetMatchListAsync()
         {
             try
@@ -56,6 +71,15 @@ namespace FrisbyBall.Managers
             return null;
         }
 
+        /// <summary>
+        /// saves match if it does not exist or updates it if it exists
+        /// </summary>
+        /// <param name="match">
+        /// match which need to be saved or updated
+        /// </param>
+        /// <returns>
+        /// return void
+        /// </returns>
         public async Task SaveMatchAsync(Models.Match match)
         {
             if (match.Id == null)

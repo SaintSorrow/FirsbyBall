@@ -4,6 +4,9 @@ using Microsoft.WindowsAzure.MobileServices;
 
 namespace FrisbyBall.Models
 {
+    /// <summary>
+    /// a model for user
+    /// </summary>
     public class User
     {
         private string id;

@@ -17,36 +17,41 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" 
-                                     Padding="5">
-                            <Image Source="PlayerIcon.png"/>
-                            <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding UserName}" 
-                                       TextColor="Cyan" 
-                                       HorizontalTextAlignment="Center"/>
+                        <Frame OutlineColor="Silver"
+                               Padding="5">
+                            <StackLayout Orientation="Horizontal" 
+                                         Padding="5">
+                                <Image Source="PlayerIcon.png"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding UserName}" 
+                                           TextColor="Cyan" 
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackLayout Orientation="Horizontal" 
-                     Grid.Row="1">
+        <Grid Grid.Row="1">
             <Button Text="Player Info" 
                     Clicked="DisplayPlayerInfo" 
-                    HorizontalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
                     Grid.Row="0"
                     Grid.Column="0"/>
             <Button Text="Choose Opponent" 
                     Clicked="ChooseOpponent" 
-                    HorizontalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
                     Grid.Row="0"
                     Grid.Column="1"/>
             <Button Text="Match History" 
                     Clicked="MatchHistory" 
-                    HorizontalOptions="FillAndExpand" 
-                    Grid.Row="1" 
-                    Grid.Column="0"/>
-        </StackLayout>
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Grid.Row="1" />
+        </Grid>
     </Grid>
 </ContentPage>

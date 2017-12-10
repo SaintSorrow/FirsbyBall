@@ -11,6 +11,9 @@ using Xamarin.Forms.Xaml;
 
 namespace FrisbyBall.Views
 {
+    /// <summary>
+    /// A view where two players are playing a match and points are being counted
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MatchPage : ContentPage
     {
@@ -29,6 +32,9 @@ namespace FrisbyBall.Views
             Init();
         }
 
+        /// <summary>
+        /// initializing graphical components and data
+        /// </summary>
         async void Init()
         {
             try
@@ -51,11 +57,27 @@ namespace FrisbyBall.Views
             }
         }
 
+        /// <summary>
+        /// this methos is launched then phisical back button is pressed on the phone
+        /// you can't go back until there is a winner
+        /// </summary>
+        /// <returns>
+        /// true - can't go back
+        /// </returns>
         protected override bool OnBackButtonPressed()
         {
             return true;
         }
 
+        /// <summary>
+        /// Event handler for MatchPlayedEvent, it is launched when one of the players win the match
+        /// </summary>
+        /// <param name="win">
+        /// A Player who won the match
+        /// </param>
+        /// <param name="lost">
+        /// A player who lost the match
+        /// </param>
         private async void MatchPlayedEventHandler(User win, User lost)
         {
             try
@@ -94,6 +116,9 @@ namespace FrisbyBall.Views
             }
         }
 
+        /// <summary>
+        /// this method is launched when home player scores a goal 
+        /// </summary>
         private void HomeGoalProcedure()
         {
             try
@@ -113,6 +138,9 @@ namespace FrisbyBall.Views
             }
         }
 
+        /// <summary>
+        /// This method is launched when away player scores a goal
+        /// </summary>
         private void AwayGoalProcedure()
         {
             try

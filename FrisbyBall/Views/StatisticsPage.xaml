@@ -12,7 +12,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame OutlineColor="Silver" Padding="5">
+                        <Frame OutlineColor="Silver" 
+                               Padding="5">
                             <Grid>
                                 <Label Text="Won:" 
                                        Grid.Row="0" 

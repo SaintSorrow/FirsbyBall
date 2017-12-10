@@ -11,6 +11,9 @@ using Xamarin.Forms.Xaml;
 
 namespace FrisbyBall.Views
 {
+    /// <summary>
+    /// Main view of the application, this view is launched when application starts
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
@@ -22,6 +25,9 @@ namespace FrisbyBall.Views
             Init();
         }
 
+        /// <summary>
+        /// Graphical components are initialized here and data loaded
+        /// </summary>
         async void Init()
         {
             Lbl_Username.TextColor = Constants.MainTextColor;
@@ -31,13 +37,18 @@ namespace FrisbyBall.Views
             Entry_Username.Completed += (s, e) => Entry_Password.Focus();
 
             manager = UserManager.DefaultManager;
+            Constants.userList = await manager.GetUsersAsync();
         }
 
+        /// <summary>
+        /// This methed is launched when registration button is pressed, signs in player or not
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void SignInProcedure(object sender, EventArgs e)
         {
             try
             {
-                Constants.userList = await manager.GetUsersAsync();
                 User user = new User
                 {
                     UserName = Entry_Username.Text,
@@ -66,7 +77,13 @@ namespace FrisbyBall.Views
             }
         }
 
-        void RegisterProcedure(object e, EventArgs s)
+        /// <summary>
+        /// This method is launched when registration  button is launched
+        /// RegistrationPage is pushed on top of navigation stack
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="s"></param>
+        void RegisterProcedure(object sender, EventArgs s)
         {
             Entry_Username.Text = "";
             Entry_Password.Text = "";

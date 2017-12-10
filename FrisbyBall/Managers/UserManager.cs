@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace FrisbyBall.Managers
 {
+    /// <summary>
+    /// manager for working with user from the cloud storage
+    /// </summary>
     public partial class UserManager
     {
         private static UserManager defaultInstance = new UserManager();
@@ -21,6 +24,9 @@ namespace FrisbyBall.Managers
             this.userTable = client.GetTable<User>();
         }
 
+        /// <summary>
+        /// return default instance of the UserManager
+        /// </summary>
         public static UserManager DefaultManager
         {
             get
@@ -33,11 +39,20 @@ namespace FrisbyBall.Managers
             }
         }
 
+        /// <summary>
+        /// returns currentclient instance
+        /// </summary>
         public MobileServiceClient CurrentClient
         {
             get { return client; }
         }
 
+        /// <summary>
+        /// uses azure cloud storage for retrieving a list of users
+        /// </summary>
+        /// <returns>
+        /// list of users
+        /// </returns>
         public async Task<List<User>> GetUsersAsync()
         {
             try
@@ -56,6 +71,15 @@ namespace FrisbyBall.Managers
             return null;
         }
 
+        /// <summary>
+        /// Inserts new user into the table or updates it if it already exists
+        /// </summary>
+        /// <param name="user">
+        /// user which needs to be inserted or updated
+        /// </param>
+        /// <returns>
+        /// returns void
+        /// </returns>
         public async Task SaveUserAsync(User user)
         {
             if (user.Id == null)
