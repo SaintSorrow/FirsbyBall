@@ -87,6 +87,14 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>   
             </ListView>
+            <Grid Grid.Row="1"
+                  VerticalOptions="EndAndExpand">
+                <Button x:Name="Btn_ChooseIcon"
+                        Text="Change Icon"
+                        Clicked="ChooseIconEvent"
+                        TextColor="White"
+                        HorizontalOptions="CenterAndExpand"/>
+            </Grid>
         </Grid> 
     </ContentPage>
 </TabbedPage>

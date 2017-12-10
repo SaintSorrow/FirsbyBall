@@ -21,7 +21,7 @@
                                Padding="5">
                             <StackLayout Orientation="Horizontal" 
                                          Padding="5">
-                                <Image Source="PlayerIcon.png"/>
+                                <Image Source="{Binding Image}"/>
                                 <StackLayout Orientation="Vertical">
                                     <Label Text="{Binding UserName}" 
                                            TextColor="Cyan" 

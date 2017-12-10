@@ -16,40 +16,41 @@ namespace FrisbyBall.Models
         private int matchCount;
         private int wins;
         private int loses;
+        private string image;
 
         [JsonProperty(PropertyName = "id")]
         public string Id
         {
             get { return id; }
-            set { id = value;}
+            set { id = value; }
         }
 
         [JsonProperty(PropertyName = "userName")]
         public string UserName
         {
             get { return userName; }
-            set { userName = value;}
+            set { userName = value; }
         }
 
         [JsonProperty(PropertyName = "password")]
         public string Password
         {
             get { return password; }
-            set { password = value;}
+            set { password = value; }
         }
 
         [JsonProperty(PropertyName = "email")]
         public string Email
         {
             get { return email; }
-            set { email = value;}
+            set { email = value; }
         }
 
         [JsonProperty(PropertyName = "MatchCount")]
         public int MatchCount
         {
             get { return matchCount; }
-            set { matchCount = value;}
+            set { matchCount = value; }
         }
 
         [JsonProperty(PropertyName = "wins")]
@@ -63,7 +64,14 @@ namespace FrisbyBall.Models
         public int Loses
         {
             get { return loses; }
-            set { loses = value;}
+            set { loses = value; }
+        }
+        
+        [JsonProperty(PropertyName = "image")]
+        public string Image
+        {
+            get { return image; }
+            set { image = value;}
         }
 
         [Version]

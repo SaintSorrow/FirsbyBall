@@ -71,6 +71,15 @@ namespace FrisbyBall.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email address has been changed.
+        /// </summary>
+        internal static string EmailChanged {
+            get {
+                return ResourceManager.GetString("EmailChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email doesn not match pattern , please repeat.
         /// </summary>
         internal static string EmailNotMatch {
@@ -112,6 +121,15 @@ namespace FrisbyBall.Models {
         internal static string GoalLimit {
             get {
                 return ResourceManager.GetString("GoalLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current password is incorrect, please repeat.
+        /// </summary>
+        internal static string IncorrectPass {
+            get {
+                return ResourceManager.GetString("IncorrectPass", resourceCulture);
             }
         }
         
@@ -224,11 +242,29 @@ namespace FrisbyBall.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password has been succesfuly changed.
+        /// </summary>
+        internal static string PassChanged {
+            get {
+                return ResourceManager.GetString("PassChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Passwords do not match, please repeat.
         /// </summary>
         internal static string PassNotMatch {
             get {
                 return ResourceManager.GetString("PassNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password does not match required pattern.
+        /// </summary>
+        internal static string PassRegexFail {
+            get {
+                return ResourceManager.GetString("PassRegexFail", resourceCulture);
             }
         }
         

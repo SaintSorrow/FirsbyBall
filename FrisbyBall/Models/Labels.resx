@@ -201,4 +201,16 @@
   <data name="PlayerNotSelect" xml:space="preserve">
     <value>Player not selected</value>
   </data>
+  <data name="EmailChanged" xml:space="preserve">
+    <value>Email address has been changed</value>
+  </data>
+  <data name="IncorrectPass" xml:space="preserve">
+    <value>Current password is incorrect, please repeat</value>
+  </data>
+  <data name="PassChanged" xml:space="preserve">
+    <value>Password has been succesfuly changed</value>
+  </data>
+  <data name="PassRegexFail" xml:space="preserve">
+    <value>Password does not match required pattern</value>
+  </data>
 </root>
