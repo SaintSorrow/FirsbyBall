@@ -16,8 +16,6 @@ namespace FrisbyBall.Views
     public partial class OpponentListViewPage : ContentPage
     {
         private User selectedUser;
-        private List<User> userList;
-        private List<User> opponentList = new List<User>();
         private List<Match> matchList = new List<Match>();
         private UserManager manager;
         private MatchManager matchManager;
@@ -29,19 +27,17 @@ namespace FrisbyBall.Views
             Init();
         }
 
+        /// <summary>
+        /// Initializes data ant managers
+        /// </summary>
         async void Init()
         {
             try
             {
+                MyListView.ItemsSource = Constants.opponentList;
                 manager = UserManager.DefaultManager;
-                userList = await manager.GetUsersAsync();
                 matchManager = MatchManager.DefaultManager;
                 matchList = await matchManager.GetMatchListAsync();
-
-                foreach (User user in userList)
-                {
-                        opponentList.Add(user);
-                }
 
                 MyListView.ItemsSource = opponentList;
             }
@@ -51,13 +47,28 @@ namespace FrisbyBall.Views
             }
         }
 
+        /// <summary>
+        /// selects user when tapped or deselects if same user is tapped
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            selectedUser = e.Item as User;
-            //Deselect Item
-            //((ListView)sender).SelectedItem = null;
+            if (selectedUser == e.Item as User)
+            {
+                ((ListView)sender).SelectedItem = null;
+            }
+            else
+            {
+                selectedUser = e.Item as User;
+            }
         }
 
+        /// <summary>
+        /// player is chosed as an opponent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ChooseOpponent(object sender, EventArgs e)
         {
             try
@@ -82,6 +93,11 @@ namespace FrisbyBall.Views
             }
         }
 
+        /// <summary>
+        /// Here we can see basic  information of player in DisplayAlert object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void DisplayPlayerInfo(object sender, EventArgs e)
         {
             try
@@ -103,6 +119,11 @@ namespace FrisbyBall.Views
             }
         }
 
+        /// <summary>
+        /// Displays selected user match history
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void MatchHistory(object sender, EventArgs e)
         {
             try
@@ -124,6 +145,16 @@ namespace FrisbyBall.Views
             {
                 await DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
             }
+        }
+
+        /// <summary>
+        /// This one is used when physical back button is pressed on mobile phone. It disables Navigation animation
+        /// </summary>
+        /// <returns></returns>
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PopModalAsync(false);
+            return true;
         }
     }
 }

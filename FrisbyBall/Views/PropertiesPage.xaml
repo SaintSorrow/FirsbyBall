@@ -16,6 +16,7 @@
                 <Label x:Name="Lbl_User" Text="" />
                 <Button x:Name="Btn_PlayGame" Text="Start match!" Clicked="StartMatchProcedure"/>
                 <Button x:Name="Btn_ChooseOpponent" Text="Choose Opponent" Clicked="NewOponentProcedure" />
+                <Button x:Name="Btn_Settings" Text="Settings" Clicked="SettingsProcedure"/>
                 <Button x:Name="Btn_Logout" Text="Logout" Clicked="Logout"/>
             </StackLayout>
         </StackLayout>

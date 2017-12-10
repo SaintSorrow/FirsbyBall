@@ -4,6 +4,9 @@ using System;
 
 namespace FrisbyBall.Models
 {
+    /// <summary>
+    /// A model for match
+    /// </summary>
     public class Match
     {
         private string id;

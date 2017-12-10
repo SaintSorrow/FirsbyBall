@@ -12,6 +12,16 @@ namespace FrisbyBall.Validations
     /// </summary>
     public static class Validation
     {
+        /// <summary>
+        /// checks if username input is valid
+        /// </summary>
+        /// <param name="_username">
+        /// incoming username parameter
+        /// </param>
+        /// <returns>
+        /// true - username macthes pattern
+        /// false - username does not match pattern
+        /// </returns>
         public static bool UsernamePatternMatch(string _username)
         {
             if (_username == "" || _username == null)
@@ -30,6 +40,16 @@ namespace FrisbyBall.Validations
             }
         }
 
+        /// <summary>
+        /// checks if password contains valid symbols
+        /// </summary>
+        /// <param name="_password">
+        /// incoming password to function
+        /// </param>
+        /// <returns>
+        /// true - password matches pattern
+        /// false - password does not match pattern
+        /// </returns>
         public static bool PasswordPatternMatch(string _password)
         {
             if (_password == "" || _password == null)
@@ -48,6 +68,16 @@ namespace FrisbyBall.Validations
             }
         }
 
+        /// <summary>
+        /// Method checking if email matches pattern 
+        /// </summary>
+        /// <param name="_email">
+        /// incoming email string
+        /// </param>
+        /// <returns>
+        /// true - email matches pattern
+        /// false - email does not match the pattern
+        /// </returns>
         public static bool EmailPatternMatch(string _email)
         {
             if (_email == "" || _email == null)

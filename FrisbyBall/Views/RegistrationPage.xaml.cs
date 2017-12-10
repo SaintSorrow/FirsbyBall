@@ -12,6 +12,9 @@ using Xamarin.Forms.Xaml;
 
 namespace FrisbyBall.Views
 {
+    /// <summary>
+    /// This view is used for registrating new users for the application
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
@@ -23,6 +26,9 @@ namespace FrisbyBall.Views
             Init();
         }
 
+        /// <summary>
+        /// Initializes graphics components and some data
+        /// </summary>
         async void Init()
         {
             manager = UserManager.DefaultManager;
@@ -37,8 +43,14 @@ namespace FrisbyBall.Views
             Entry_Username.Completed += (s, e) => Entry_Password.Focus();
             Entry_Password.Completed += (s, e) => Entry_RepeatPassword.Focus();
             Entry_RepeatPassword.Completed += (s, e) => Entry_Email.Focus();
+            Constants.userList = await manager.GetUsersAsync();
         }
 
+        /// <summary>
+        /// This code is launched when registration  button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
          async void RegisterProcedure(object sender, EventArgs e)
         {
             try
@@ -57,10 +69,11 @@ namespace FrisbyBall.Views
 
                     List<User> userList = await manager.GetUsersAsync();
 
-                    if(await CheckIfExistsAsync(userList, user))
+                    if(await CheckIfExistsAsync(Constants.userList, user))
                     {
                         await manager.SaveUserAsync(user);
                         await DisplayAlert(Labels.Info, Labels.RegSucc, Labels.Ok);
+                        Constants.userList = await manager.GetUsersAsync();
                         await Navigation.PopModalAsync();
                     }
 
@@ -72,6 +85,13 @@ namespace FrisbyBall.Views
             }
         }
 
+        /// <summary>
+        /// Checks entry text, uses regex for it
+        /// </summary>
+        /// <returns>
+        /// true - input matches regex
+        /// false - input does not match regex
+        /// </returns>
         async Task<bool> CheckInputAsync()
         {
             
@@ -96,8 +116,21 @@ namespace FrisbyBall.Views
                 return false;
             }
         }
-
-        async Task<bool> CheckIfExistsAsync(List<User> _userList, User _user)
+        
+        /// <summary>
+        /// checks if user already exists in system
+        /// </summary>
+        /// <param name="_userList">
+        /// List of all uses in system
+        /// </param>
+        /// <param name="_user">
+        /// Looks for this user in system
+        /// </param>
+        /// <returns>
+        /// true - user does not exist in system
+        /// false - user already exists in system
+        /// </returns>
+        async Task<bool> checkIfExistsAsync(List<User> _userList, User _user)
         {
             foreach (User user in _userList)
             {
