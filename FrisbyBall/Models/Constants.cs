@@ -20,6 +20,7 @@ namespace FrisbyBall
         //public static User selectedUser;
         public static List<Match> userMatches;
         public static int GoalLimit = 10;
+        public static List<User> userList;
 	}
 }
 

@@ -16,7 +16,6 @@ namespace FrisbyBall.Views
     public partial class OpponentListViewPage : ContentPage
     {
         private User selectedUser;
-        private List<User> userList;
         private List<User> opponentList = new List<User>();
         private List<Match> matchList = new List<Match>();
         private UserManager manager;
@@ -34,11 +33,10 @@ namespace FrisbyBall.Views
             try
             {
                 manager = UserManager.DefaultManager;
-                userList = await manager.GetUsersAsync();
                 matchManager = MatchManager.DefaultManager;
                 matchList = await matchManager.GetMatchListAsync();
 
-                foreach (User user in userList)
+                foreach (User user in Constants.userList)
                 {
                     if (user.UserName != Constants.LocalUser.UserName)
                     {

@@ -9,24 +9,44 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListView x:Name="MyListView" CachingStrategy="RecycleElement" ItemTapped="Handle_ItemTapped" RowHeight="60" Grid.Row="0">
+        <ListView x:Name="MyListView" 
+                  CachingStrategy="RecycleElement" 
+                  ItemTapped="Handle_ItemTapped" 
+                  RowHeight="60" 
+                  Grid.Row="0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="5">
+                        <StackLayout Orientation="Horizontal" 
+                                     Padding="5">
                             <Image Source="PlayerIcon.png"/>
                             <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding UserName}" TextColor="Cyan" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding UserName}" 
+                                       TextColor="Cyan" 
+                                       HorizontalTextAlignment="Center"/>
                             </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackLayout Orientation="Horizontal" Grid.Row="1">
-            <Button Text="Player Info" Clicked="DisplayPlayerInfo" HorizontalOptions="FillAndExpand" Grid.Row="0"/>
-            <Button Text="Choose Opponent" Clicked="ChooseOpponent" HorizontalOptions="FillAndExpand" Grid.Row="0"/>
-            <Button Text="Match History" Clicked="MatchHistory" HorizontalOptions="FillAndExpand" Grid.Row="1" />
+        <StackLayout Orientation="Horizontal" 
+                     Grid.Row="1">
+            <Button Text="Player Info" 
+                    Clicked="DisplayPlayerInfo" 
+                    HorizontalOptions="FillAndExpand" 
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+            <Button Text="Choose Opponent" 
+                    Clicked="ChooseOpponent" 
+                    HorizontalOptions="FillAndExpand" 
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+            <Button Text="Match History" 
+                    Clicked="MatchHistory" 
+                    HorizontalOptions="FillAndExpand" 
+                    Grid.Row="1" 
+                    Grid.Column="0"/>
         </StackLayout>
     </Grid>
 </ContentPage>

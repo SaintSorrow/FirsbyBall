@@ -37,6 +37,7 @@ namespace FrisbyBall.Views
             Entry_Username.Completed += (s, e) => Entry_Password.Focus();
             Entry_Password.Completed += (s, e) => Entry_RepeatPassword.Focus();
             Entry_RepeatPassword.Completed += (s, e) => Entry_Email.Focus();
+            Constants.userList = await manager.GetUsersAsync();
         }
 
          async void RegisterProcedure(object sender, EventArgs e)
@@ -55,9 +56,7 @@ namespace FrisbyBall.Views
                         Loses = 0
                     };
 
-                    List<User> userList = await manager.GetUsersAsync();
-
-                    if(await checkIfExistsAsync(userList, user))
+                    if(await checkIfExistsAsync(Constants.userList, user))
                     {
                         await manager.SaveUserAsync(user);
                         await DisplayAlert(Labels.Info, Labels.RegSucc, Labels.Ok);

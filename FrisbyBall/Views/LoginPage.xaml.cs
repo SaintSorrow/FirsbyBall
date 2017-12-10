@@ -14,7 +14,6 @@ namespace FrisbyBall.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        private List<User> userList;
         private UserManager manager;
 
         public LoginPage()
@@ -32,28 +31,24 @@ namespace FrisbyBall.Views
             Entry_Username.Completed += (s, e) => Entry_Password.Focus();
 
             manager = UserManager.DefaultManager;
-            userList = await manager.GetUsersAsync();
-
         }
 
         async void SignInProcedure(object sender, EventArgs e)
         {
             try
             {
-                userList = await manager.GetUsersAsync();
+                Constants.userList = await manager.GetUsersAsync();
                 User user = new User
                 {
                     UserName = Entry_Username.Text,
                     Password = Entry_Password.Text
                 };
 
-                var LogUser = userList.FirstOrDefault(_user => user.UserName == _user.UserName
+                var LogUser = Constants.userList.FirstOrDefault(_user => user.UserName == _user.UserName
                                                             && user.Password == _user.Password);
 
                 if (LogUser != null)
                 {
-                    Entry_Username.Text.DefaultIfEmpty();
-                    Entry_Password.Text.DefaultIfEmpty();
                     Constants.LocalUser = LogUser;
                     Entry_Password.Text = "";
                     Entry_Username.Text = "";
