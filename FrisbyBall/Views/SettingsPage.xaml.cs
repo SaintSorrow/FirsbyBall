@@ -145,7 +145,7 @@ namespace FrisbyBall.Views
                 userManager.SaveUserAsync(Constants.LocalUser);
                 Constants.userList = await userManager.GetUsersAsync();
                 Entry_NewEmail.Text = "";
-                DisplayAlert(Labels.Info, Labels.EmailChanged, Labels.Ok);
+                DisplayAlert(Labels.Info, Labels.MailChanged, Labels.Ok);
             }
             catch (Exception exc)
             {

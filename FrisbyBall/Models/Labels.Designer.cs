@@ -71,19 +71,20 @@ namespace FrisbyBall.Models {
         }
         
         /// <summary>
-
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CannotChooseYourself {
+            get {
+                return ResourceManager.GetString("CannotChooseYourself", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email address has been changed.
         /// </summary>
         internal static string EmailChanged {
             get {
                 return ResourceManager.GetString("EmailChanged", resourceCulture);
-
-        ///   Looks up a localized string similar to You cannot choose yourself as opponent.
-        /// </summary>
-        internal static string CannotChooseYourself {
-            get {
-                return ResourceManager.GetString("CannotChooseYourself", resourceCulture);
-
             }
         }
         
@@ -174,6 +175,15 @@ namespace FrisbyBall.Models {
         internal static string LoginSucc {
             get {
                 return ResourceManager.GetString("LoginSucc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email has been changed.
+        /// </summary>
+        internal static string MailChanged {
+            get {
+                return ResourceManager.GetString("MailChanged", resourceCulture);
             }
         }
         

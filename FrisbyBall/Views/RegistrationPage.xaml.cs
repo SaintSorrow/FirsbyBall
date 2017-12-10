@@ -130,7 +130,7 @@ namespace FrisbyBall.Views
         /// true - user does not exist in system
         /// false - user already exists in system
         /// </returns>
-        async Task<bool> checkIfExistsAsync(List<User> _userList, User _user)
+        async Task<bool> CheckIfExistsAsync(List<User> _userList, User _user)
         {
             foreach (User user in _userList)
             {
