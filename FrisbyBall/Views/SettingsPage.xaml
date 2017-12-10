@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrisbyBall.Views.SettingsPage"
+            BackgroundColor="Black">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Password">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label x:Name="Lbl_CurrentPassword"
+                   Text="Current Password"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
+            <Entry x:Name="Entry_CurrentPassword" 
+                   Placeholder="Current" 
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
+            <Label x:Name="Lbl_NewPassword"
+                   Text="New Password"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
+            <Entry x:Name="Entry_NewPassword" 
+                   Placeholder="New Password" 
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
+            <Label x:Name="Lbl_RepeatPassword"
+                   Text="Repeat Password"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
+            <Entry x:Name="Entry_RepeatPassword" 
+                   Placeholder="New Password" 
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"/>
+            <Button x:Name="Btn_ChangePassword"
+                    Text="Change Password"
+                    TextColor="White"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="ChangePasswordEvent"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Email">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label x:Name="Lbl_CurrentEmail" 
+                   TextColor="White"
+                   Text=""
+                   HorizontalOptions="CenterAndExpand"/>
+            <Entry x:Name="Entry_NewEmail"
+                   Placeholder="Email"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="Btn_ChangeEmail" 
+                    Text="Change Email"
+                    TextColor="White"
+                    Clicked="ChangeEmailEvent"
+                    HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Icon" >
+        <ListView>
+            
+        </ListView> 
+    </ContentPage>
+</TabbedPage>

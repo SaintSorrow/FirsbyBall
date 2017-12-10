@@ -97,5 +97,15 @@ namespace FrisbyBall.Views
         {
             return true;
         }
+
+        /// <summary>
+        /// Goes to settings page, pushes settings page on navigation stack
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        async void SettingsProcedure(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new SettingsPage(), false);
+        }
     }
 }
