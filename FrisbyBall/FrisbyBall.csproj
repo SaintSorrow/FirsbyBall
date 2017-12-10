@@ -62,12 +62,7 @@
     <Compile Include="Views\StatisticsPage.xaml.cs">
       <DependentUpon>StatisticsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TodoList.xaml.cs">
-      <DependentUpon>TodoList.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\Constants.cs" />
-    <Compile Include="Models\TodoItem.cs" />
-    <Compile Include="Managers\TodoItemManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -77,9 +72,6 @@
     <EmbeddedResource Include="Models\Labels.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Labels.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\TodoList.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

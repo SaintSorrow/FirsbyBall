@@ -57,7 +57,7 @@ namespace FrisbyBall.Views
 
                     List<User> userList = await manager.GetUsersAsync();
 
-                    if(await checkIfExistsAsync(userList, user))
+                    if(await CheckIfExistsAsync(userList, user))
                     {
                         await manager.SaveUserAsync(user);
                         await DisplayAlert(Labels.Info, Labels.RegSucc, Labels.Ok);
@@ -97,7 +97,7 @@ namespace FrisbyBall.Views
             }
         }
 
-        async Task<bool> checkIfExistsAsync(List<User> _userList, User _user)
+        async Task<bool> CheckIfExistsAsync(List<User> _userList, User _user)
         {
             foreach (User user in _userList)
             {
