@@ -9,8 +9,6 @@
         <ListView x:Name="MyListView"
             CachingStrategy="RecycleElement"
             RowHeight="80">
-
-            <!--Built in Cells-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -65,26 +63,10 @@
                                        HorizontalOptions="CenterAndExpand"
                                        VerticalOptions="CenterAndExpand"/>
                             </Grid>
-                        </Frame>    
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
-            <!--Custom View Cells-->
-            <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
         </ListView>
     </StackLayout>
 </ContentPage>
