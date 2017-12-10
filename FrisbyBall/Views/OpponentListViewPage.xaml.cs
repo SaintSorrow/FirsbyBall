@@ -93,7 +93,7 @@ namespace FrisbyBall.Views
                 {
                     await DisplayAlert(Labels.Info, $"Username : {selectedUser.UserName}" +
                                                     $"\nEmail: {selectedUser.Email}" +
-                                                    $"\nWon :{selectedUser.Wins}\nLost :{selectedUser.Loses}", Labels.Ok);
+                                                    $"\nW/L :{selectedUser.Wins}/{selectedUser.Loses}", Labels.Ok);
                 }
             }
             catch(Exception exc)
