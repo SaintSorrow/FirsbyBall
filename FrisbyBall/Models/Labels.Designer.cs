@@ -71,6 +71,15 @@ namespace FrisbyBall.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You cannot choose yourself as opponent.
+        /// </summary>
+        internal static string CannotChooseYourself {
+            get {
+                return ResourceManager.GetString("CannotChooseYourself", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email doesn not match pattern , please repeat.
         /// </summary>
         internal static string EmailNotMatch {

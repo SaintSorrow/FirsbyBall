@@ -201,4 +201,7 @@
   <data name="PlayerNotSelect" xml:space="preserve">
     <value>Player not selected</value>
   </data>
+  <data name="CannotChooseYourself" xml:space="preserve">
+    <value>You cannot choose yourself as opponent</value>
+  </data>
 </root>

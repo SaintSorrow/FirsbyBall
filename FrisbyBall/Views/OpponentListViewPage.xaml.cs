@@ -40,10 +40,7 @@ namespace FrisbyBall.Views
 
                 foreach (User user in userList)
                 {
-                    if (user.UserName != Constants.LocalUser.UserName)
-                    {
                         opponentList.Add(user);
-                    }
                 }
 
                 MyListView.ItemsSource = opponentList;
@@ -65,7 +62,11 @@ namespace FrisbyBall.Views
         {
             try
             {
-                if (selectedUser != null)
+                if(selectedUser.Id == Constants.LocalUser.Id)
+                {
+                    DisplayAlert(Labels.Info, Labels.CannotChooseYourself, Labels.Ok);
+                }
+                else if (selectedUser != null)
                 {
                     Constants.opponent = selectedUser;
                     Navigation.PopModalAsync(false);
