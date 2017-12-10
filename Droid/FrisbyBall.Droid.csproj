@@ -96,7 +96,7 @@
     <AndroidResource Include="Resources\drawable\batman.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\charles-chaplin.png" />
+    <AndroidResource Include="Resources\drawable\charlesChaplin.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\geek.png" />
@@ -114,7 +114,7 @@
     <AndroidResource Include="Resources\drawable\punk.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\serial-killer.png" />
+    <AndroidResource Include="Resources\drawable\serialKiller.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\soldier.png" />

@@ -2,7 +2,8 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrisbyBall.Views.SettingsPage"
-            BackgroundColor="Black">
+             BackgroundColor="Black"
+            Title="Settings">
   <!--Pages can be added as references or inline-->
     <ContentPage Title="Password">
         <StackLayout VerticalOptions="CenterAndExpand">
@@ -56,8 +57,36 @@
     </ContentPage>
 
     <ContentPage Title="Icon" >
-        <ListView>
-            
-        </ListView> 
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="LogoListview"
+                      ItemTapped="Handle_ItemTapped"
+                      CachingStrategy="RecycleElement"
+                      RowHeight="60"
+                      Grid.Row="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame OutlineColor="Silver"
+                                   Padding="5">
+                                <StackLayout Orientation="Horizontal"
+                                             Padding="5">
+                                    <Image Source="{Binding Image}"/>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding ImageName}"
+                                               TextColor="White"
+                                               HorizontalOptions="StartAndExpand"
+                                               VerticalOptions="StartAndExpand"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>   
+            </ListView>
+        </Grid> 
     </ContentPage>
 </TabbedPage>

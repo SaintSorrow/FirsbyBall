@@ -34,6 +34,7 @@
   <ItemGroup>
     <Compile Include="Managers\MatchManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
+    <Compile Include="Models\Images.cs" />
     <Compile Include="Models\Labels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
