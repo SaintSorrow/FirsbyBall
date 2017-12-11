@@ -38,7 +38,7 @@ namespace FrisbyBall.Views
                     new Images{ Image = "astronaut.png", ImageName = "Astronaut"},
                     new Images{ Image = "batman.png", ImageName = "Batman"},
                     new Images{ Image = "charlesChaplin.png", ImageName = "Charles Chaplin"},
-                    new Images{ Image= "geek.png", ImageName = "Geek"},
+                    new Images{ Image = "geek.png", ImageName = "Geek"},
                     new Images{ Image = "yoda.png", ImageName = "Yoda"},
                     new Images{ Image = "pirate.png", ImageName = "Pirate"},
                     new Images{ Image = "PlayerIcon.png", ImageName = "Default icon"},

@@ -31,7 +31,7 @@ namespace FrisbyBall.Views
         {   
             Lbl_Hello.TextColor = Constants.MainTextColor;
             Lbl_User.TextColor = Constants.MainTextColor;
-            Lbl_User.Text = "Welcome " + Constants.LocalUser.UserName;
+            Lbl_User.Text = Labels.Welcome + " " + Constants.LocalUser.UserName;
             LogoIcon.HeightRequest = Constants.LoginIconHeight;
 
             Constants.opponentList = new List<User>();

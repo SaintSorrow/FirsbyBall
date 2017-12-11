@@ -222,4 +222,7 @@
   <data name="MailChanged" xml:space="preserve">
     <value>Email has been changed</value>
   </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
 </root>
