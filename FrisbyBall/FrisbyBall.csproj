@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controlers\LoginPageControler.cs" />
+    <Compile Include="Controlers\MatchPageController.cs" />
     <Compile Include="Managers\MatchManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Models\Images.cs" />

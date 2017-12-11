@@ -29,7 +29,7 @@ namespace FrisbyBall.Views
         /// <summary>
         /// Graphical components are initialized here and data loaded
         /// </summary>
-        async void Init()
+        void Init()
         {
             Lbl_Username.TextColor = Constants.MainTextColor;
             Lbl_Password.TextColor = Constants.MainTextColor;

@@ -1,17 +1,15 @@
 ﻿using FrisbyBall.Managers;
 using FrisbyBall.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FrisbyBall.Controlers
 {
-    class LoginPageControler
+    public class LoginPageControler
     {
         private UserManager userManager;
         private User localUser;
+
         public LoginPageControler()
         {
             userManager = UserManager.DefaultManager;
