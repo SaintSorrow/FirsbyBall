@@ -37,7 +37,7 @@ namespace FrisbyBall.Views
             Constants.opponentList = new List<User>();
             foreach (User user in Constants.userList)
             {
-                if (user.UserName != Constants.LocalUser.UserName)
+                if (user.UserName != null)
                 {
                     Constants.opponentList.Add(user);
                 }

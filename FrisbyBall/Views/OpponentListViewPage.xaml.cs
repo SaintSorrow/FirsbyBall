@@ -38,8 +38,6 @@ namespace FrisbyBall.Views
                 manager = UserManager.DefaultManager;
                 matchManager = MatchManager.DefaultManager;
                 matchList = await matchManager.GetMatchListAsync();
-
-                MyListView.ItemsSource = Constants.opponentList;
             }
             catch (Exception exc)
             {
@@ -73,7 +71,11 @@ namespace FrisbyBall.Views
         {
             try
             {
-                if (selectedUser != null)
+                if(selectedUser == Constants.LocalUser)
+                {
+                    DisplayAlert(Labels.Info, Labels.CannotChooseYourself, Labels.Ok);
+                }
+                else if (selectedUser != null)
                 {
                     Constants.opponent = selectedUser;
                     Navigation.PopModalAsync(false);
