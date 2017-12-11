@@ -14,10 +14,6 @@ namespace FrisbyBall.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StatisticsPage : ContentPage
     {
-        private MatchManager matchManager;
-        private List<Match> matchList = new List<Match>();
-        //private List<Match> userMatches = new List<Match>();
-
         public StatisticsPage()
         {
             InitializeComponent();
@@ -31,7 +27,7 @@ namespace FrisbyBall.Views
         {
             try
             {
-                MyListView.ItemsSource = Constants.userMatches;
+                MyListView.ItemsSource = StatisticsPageController.UserMatches();
             }
             catch (Exception exc)
             {

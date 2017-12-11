@@ -67,6 +67,7 @@
       <DependentUpon>StatisticsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Constants.cs" />
+    <Compile Include="Views\StatisticsPageController.cs" />
     <Compile Include="Views\TopPlayersPage.xaml.cs">
       <DependentUpon>TopPlayersPage.xaml</DependentUpon>
     </Compile>
