@@ -51,7 +51,14 @@
                     Clicked="MatchHistory" 
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
-                    Grid.Row="1" />
+                    Grid.Row="1"
+                    Grid.Column="0"/>
+            <!--<Button Text="Top Players"
+                    Clicked="TopPlayersEvent"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Grid.Row="1"
+                    Grid.Column="1"/>-->
         </Grid>
     </Grid>
 </ContentPage>
