@@ -153,9 +153,9 @@ namespace FrisbyBall.Views
             return true;
         }
 
-        void TopPlayersEvent(object sender, EventArgs e)
+        /*void TopPlayersEvent(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new TopPlayersPage(), false);
-        }
+        }*/
     }
 }
