@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FrisbyBall.Controlers;
 
 namespace FrisbyBall.Views
 {
@@ -16,6 +17,7 @@ namespace FrisbyBall.Views
     public partial class RegistrationPage : ContentPage
     {
         UserManager manager;
+        private RegistrationPageController registrationPageControler;
 
         public RegistrationPage()
         {
@@ -40,7 +42,8 @@ namespace FrisbyBall.Views
             Entry_Username.Completed += (s, e) => Entry_Password.Focus();
             Entry_Password.Completed += (s, e) => Entry_RepeatPassword.Focus();
             Entry_RepeatPassword.Completed += (s, e) => Entry_Email.Focus();
-            Constants.userList = await manager.GetUsersAsync();
+            registrationPageControler = new RegistrationPageController();
+
         }
 
         /// <summary>
@@ -52,7 +55,7 @@ namespace FrisbyBall.Views
         {
             try
             {
-                if (await CheckInputAsync())
+                if (registrationPageControler.CheckInputAsync(Entry_Username.Text,Entry_Password.Text,Entry_Email.Text,Entry_RepeatPassword.Text))
                 {
                     User user = new User
                     {
@@ -67,7 +70,7 @@ namespace FrisbyBall.Views
 
                     List<User> userList = await manager.GetUsersAsync();
 
-                    if(await CheckIfExistsAsync(Constants.userList, user))
+                    if(registrationPageControler.CheckIfExistsAsync(Constants.userList, user))
                     {
                         await manager.SaveUserAsync(user);
                         await DisplayAlert(Labels.Info, Labels.RegSucc, Labels.Ok);
@@ -83,64 +86,7 @@ namespace FrisbyBall.Views
             }
         }
 
-        /// <summary>
-        /// Checks entry text, uses regex for it
-        /// </summary>
-        /// <returns>
-        /// true - input matches regex
-        /// false - input does not match regex
-        /// </returns>
-        async Task<bool> CheckInputAsync()
-        {
-            
-            if (Validation.UsernamePatternMatch(Entry_Username.Text) &&
-                Validation.PasswordPatternMatch(Entry_Password.Text) &&
-                Validation.EmailPatternMatch(Entry_Email.Text)       &&
-                Validation.PasswordPatternMatch(Entry_RepeatPassword.Text))
-            {
-                if (Entry_Password.Text == Entry_RepeatPassword.Text)
-                {
-                    return true;
-                }
-                else
-                {
-                    await DisplayAlert(Labels.Info, Labels.PassNotMatch, Labels.Ok);
-                    return false;
-                }
-            }
-            else
-            {
-                await DisplayAlert(Labels.Info, Labels.NoMatch, Labels.Ok);
-                return false;
-            }
-        }
-        
-        /// <summary>
-        /// checks if user already exists in system
-        /// </summary>
-        /// <param name="_userList">
-        /// List of all uses in system
-        /// </param>
-        /// <param name="_user">
-        /// Looks for this user in system
-        /// </param>
-        /// <returns>
-        /// true - user does not exist in system
-        /// false - user already exists in system
-        /// </returns>
-        async Task<bool> CheckIfExistsAsync(List<User> _userList, User _user)
-        {
-            foreach (User user in _userList)
-            {
-                if (user.UserName == _user.UserName)
-                {
-                    await DisplayAlert(Labels.Info, Labels.UserExists, Labels.Ok);
-                    return false;
-                }
-            }
-
-            return true;
-        }
+      
 
     }
 }
