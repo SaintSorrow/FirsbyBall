@@ -70,6 +70,9 @@
     <Compile Include="Views\TopPlayersPage.xaml.cs">
       <DependentUpon>TopPlayersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\VideoRecognition.xaml.cs">
+      <DependentUpon>VideoRecognition.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -79,6 +82,10 @@
     <EmbeddedResource Include="Models\Labels.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VideoRecognition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
