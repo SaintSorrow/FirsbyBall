@@ -14,7 +14,8 @@
             <Entry x:Name="Entry_CurrentPassword" 
                    Placeholder="Current" 
                    HorizontalOptions="CenterAndExpand"
-                   TextColor="White"/>
+                   TextColor="White"
+                   IsPassword="True"/>
             <Label x:Name="Lbl_NewPassword"
                    Text="New Password"
                    HorizontalOptions="CenterAndExpand"
@@ -22,7 +23,8 @@
             <Entry x:Name="Entry_NewPassword" 
                    Placeholder="New Password" 
                    HorizontalOptions="CenterAndExpand"
-                   TextColor="White"/>
+                   TextColor="White"
+                   IsPassword="True"/>
             <Label x:Name="Lbl_RepeatPassword"
                    Text="Repeat Password"
                    HorizontalOptions="CenterAndExpand"
@@ -30,7 +32,8 @@
             <Entry x:Name="Entry_RepeatPassword" 
                    Placeholder="New Password" 
                    HorizontalOptions="CenterAndExpand"
-                   TextColor="White"/>
+                   TextColor="White"
+                   IsPassword="True"/>
             <Button x:Name="Btn_ChangePassword"
                     Text="Change Password"
                     TextColor="White"
