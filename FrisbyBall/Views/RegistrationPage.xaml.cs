@@ -64,7 +64,8 @@ namespace FrisbyBall.Views
                         Email = Entry_Email.Text,
                         MatchCount = 0,
                         Wins = 0,
-                        Loses = 0
+                        Loses = 0,
+                        Image = "astronaut.png"
                     };
 
                     List<User> userList = await manager.GetUsersAsync();

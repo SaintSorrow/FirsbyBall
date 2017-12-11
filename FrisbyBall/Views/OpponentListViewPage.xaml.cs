@@ -152,5 +152,10 @@ namespace FrisbyBall.Views
             Navigation.PopModalAsync(false);
             return true;
         }
+
+        void TopPlayersEvent(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new TopPlayersPage(), false);
+        }
     }
 }
