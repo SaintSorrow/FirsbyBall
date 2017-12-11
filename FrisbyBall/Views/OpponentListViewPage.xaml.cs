@@ -38,8 +38,6 @@ namespace FrisbyBall.Views
                 manager = UserManager.DefaultManager;
                 matchManager = MatchManager.DefaultManager;
                 matchList = await matchManager.GetMatchListAsync();
-
-                MyListView.ItemsSource = Constants.opponentList;
             }
             catch (Exception exc)
             {
