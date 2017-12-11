@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using System.Text.RegularExpressions;
+using PassRe = System.Text.RegularExpressions;
 
 namespace FrisbyBall
 {
@@ -29,9 +29,11 @@ namespace FrisbyBall
         public static string EmailMatchPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
                       + "@"
                       + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$";
+
         public static Regex regex = new Regex(@"^\w+$");
         public static int homeGoalCount = 0;
         public static int awayGoalCount = 0;
+
 	}
 }
 
