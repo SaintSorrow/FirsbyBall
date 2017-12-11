@@ -29,8 +29,7 @@ namespace FrisbyBall.Validations
                 return false;
             }
 
-            Regex regex = new Regex(@"^\w+$");
-            if (regex.IsMatch(_username))
+            if (Constants.regex.IsMatch(_username))
             {
                 return true;
             }
@@ -57,8 +56,7 @@ namespace FrisbyBall.Validations
                 return false;
             }
 
-            Regex regex = new Regex(@"^\w+$");
-            if (regex.IsMatch(_password))
+            if (Constants.regex.IsMatch(_password))
             {
                 return true;
             }
@@ -85,11 +83,11 @@ namespace FrisbyBall.Validations
                 return false;
             }
 
-            string EmailMatchPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
-                                     + "@"
-                                     + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$";
 
-            Regex regex = new Regex(EmailMatchPattern);
+         /// <param name="">
+         /// Looks for this user in system
+         /// </param>
+            Regex regex = new Regex(Constants.EmailMatchPattern);
             if (regex.IsMatch(_email))
             {
                 return true;
