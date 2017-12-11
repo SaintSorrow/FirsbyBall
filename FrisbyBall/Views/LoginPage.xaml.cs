@@ -1,4 +1,5 @@
-﻿using FrisbyBall.Managers;
+﻿using FrisbyBall.Controlers;
+using FrisbyBall.Managers;
 using FrisbyBall.Models;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace FrisbyBall.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        private UserManager manager;
+        private LoginPageControler loginPageControler;
 
         public LoginPage()
         {
@@ -35,9 +36,7 @@ namespace FrisbyBall.Views
             LogoIcon.HeightRequest = Constants.LoginIconHeight;
 
             Entry_Username.Completed += (s, e) => Entry_Password.Focus();
-
-            manager = UserManager.DefaultManager;
-            Constants.userList = await manager.GetUsersAsync();
+            loginPageControler = new LoginPageControler();
         }
 
         /// <summary>
@@ -45,35 +44,25 @@ namespace FrisbyBall.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        async void SignInProcedure(object sender, EventArgs e)
+        void SignInProcedure(object sender, EventArgs e)
         {
             try
-            {
-                User user = new User
+            { 
+                if (loginPageControler.SignInProcedure(Entry_Username.Text, Entry_Password.Text))
                 {
-                    UserName = Entry_Username.Text,
-                    Password = Entry_Password.Text
-                };
-
-                var LogUser = Constants.userList.FirstOrDefault(_user => user.UserName == _user.UserName
-                                                            && user.Password == _user.Password);
-
-                if (LogUser != null)
-                {
-                    Constants.LocalUser = LogUser;
+                    DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
                     Entry_Password.Text = "";
                     Entry_Username.Text = "";
-                    await DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
-                    await Navigation.PushModalAsync(new PropertiesPage(), false);
+                    Navigation.PushModalAsync(new PropertiesPage(), false);
                 }
                 else
                 {
-                    await DisplayAlert(Labels.Failed, Labels.UserNotExists, Labels.Ok);
+                    DisplayAlert(Labels.Failed, Labels.UserNotExists, Labels.Ok);
                 }
             }
             catch (Exception exc)
             {
-                await DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
+                DisplayAlert(Labels.Exc, exc.Message, Labels.Ok);
             }
         }
 
