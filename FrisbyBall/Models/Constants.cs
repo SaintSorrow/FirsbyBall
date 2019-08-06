@@ -22,14 +22,18 @@ namespace FrisbyBall
         public static User opponent;
         public static User LocalUser;
         //public static User selectedUser;
-        public static List<Match> userMatches;
+        public static List<Models.Match> userMatches;
         public static int GoalLimit = 10;
         public static List<User> userList;
         public static List<User> opponentList;
         public static string EmailMatchPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
                       + "@"
                       + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$";
-        public static PassRe.Regex regex = new PassRe.Regex(@"^\w+$");
+
+        public static Regex regex = new Regex(@"^\w+$");
+        public static int homeGoalCount = 0;
+        public static int awayGoalCount = 0;
+
 	}
 }
 
